@@ -1,14 +1,11 @@
 import os
 import array
 import sys
-from insort import insertionsort
-from quicksort import partition
+from inssort import inssort
 from quicksort import quicksort
-from maximum import max_heapify
-from maximum import heap_sort
-from maximum import build_max_heap
-# Bubble Sort Implementation
+from heapsort import  heapsort
 
+# Bubble Sort Implementation
 def swap(a, i, j):
     t = a[j]
     a[j] = a[i]
@@ -45,7 +42,6 @@ def run_bubblesort():
     nums_sorted.close()
 
 
-
 def run_insertionsort():
     # read the content of nums.txt into an array
     nums = open('nums.txt', 'r')
@@ -54,15 +50,12 @@ def run_insertionsort():
         a.append(int(str.strip(line)))
 
     # Testing insertion sort
-    # Call your insertion sort implementation here
-    insertionsort(a)
-    # inssort(a)
+    inssort(a)
 
     # output nums_sorted.txt
     nums_sorted = open('insertionsorted.txt', 'w')
     for element in a:
         nums_sorted.write(str(element) + "\n")
-
     nums.close()
     nums_sorted.close()
 
@@ -72,12 +65,12 @@ def run_quicksort():
     a = []
     for line in nums:
         a.append(int(str.strip(line)))
-    p=0
-    r=len(a)-1
-    #print(r)
-    # Testing quicksort
 
-    quicksort(a,p,r)
+    # Testing quicksort
+    # Call your quicksort implementation here
+    start=0;
+    end = len(a)-1;
+    quicksort(a,start,end)
 
     # output nums_sorted.txt
     nums_sorted = open('quicksorted.txt', 'w')
@@ -97,7 +90,7 @@ def run_heapsort():
 
     # Testing heapsort
     # Call your heapsort implementation here
-    heap_sort(a)
+    heapsort(a)
 
     # output nums_sorted.txt
     nums_sorted = open('heapsorted.txt', 'w')
@@ -111,8 +104,9 @@ def run_heapsort():
 def run():
     # check if nums.txt exists
     if not os.path.exists('nums.txt'):
-        print ("First create nums.txt")
+        print("First create nums.txt")
         sys.exit(0)
+
 
     run_bubblesort()
     run_insertionsort()

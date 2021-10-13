@@ -25,4 +25,4 @@ do
     find "$script_dir" -name "*sorted.txt" -delete
     echo
 done
-rm "nums_ref.txt"
+rm "nums.txt"

@@ -5,7 +5,6 @@ import sys
 from heapsort import *
 from insertionsort import *
 from quicksort import *
-from rangen import *
 
 
 # Bubble Sort Implementation
@@ -59,7 +58,7 @@ def run_insertionsort():
     nums_sorted = open('insertionsorted.txt', 'w')
     for element in a:
         nums_sorted.write(str(element) + "\n")
-   
+
     nums.close()
     nums_sorted.close()
 
@@ -105,7 +104,6 @@ def run_heapsort():
 
 
 def run():
-    rangen(20)
     # check if nums.txt exists
     if not os.path.exists('nums.txt'):
         print ("First create nums.txt")

@@ -1,7 +1,6 @@
 import os
 import array
 import sys
-from rangen import rangen
 import time
 from Insertionsort import insertionsort
 from Quicksort import partition, quicksort
@@ -48,7 +47,7 @@ def run_insertionsort():
     for line in nums:
         a.append(int(str.strip(line)))
 
-    
+
     # Testing insertion sort
     # Call your insertion sort implementation here
     #inssort(a)
@@ -56,7 +55,7 @@ def run_insertionsort():
     #insertionsort(a)
     #toc = time.time()
     #print("Insertion Sort ", toc-tic)
-    
+
     # output nums_sorted.txt
     nums_sorted = open('insertionsorted.txt', 'w')
     for element in a:
@@ -102,7 +101,7 @@ def run_heapsort():
     heap_sort(a)
     toc = time.time()
     print("Heap sort",toc-tic)
-    
+
     # output nums_sorted.txt
     nums_sorted = open('heapsorted.txt', 'w')
     for element in a:
